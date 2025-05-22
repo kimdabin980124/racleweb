@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4626MJ2WQ"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HNN07XZ6Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){dataLayer.push(arguments);}    
     gtag('js', new Date());
-
-    gtag('config', 'G-W4626MJ2WQ');
+    gtag('config', 'G-4HNN07XZ6Z');
   </script>
 
   <!-- Google AdSense -->
@@ -75,9 +73,15 @@
   <script>
     const translations = {
       ko: { title: '투자 계산기', calc1: '복리 계산기', calc2: '투자 목표 계산기', nav1: '복리 계산기', nav2: '투자 목표 계산기' },
-      en: { title: 'Investment Calculators', calc1: 'Compound Interest Calculator', calc2: 'Investment Goal Calculator', nav1: 'Compound Interest', nav2: 'Investment Goal' }
+      en: { title: 'Investment Calculators', calc1: 'Compound Interest Calculator', calc2: 'Investment Goal Calculator', nav1: 'Compound Interest', nav2: 'Investment Goal' },
+      fr: { title: "Calculatrices d'investissement", calc1: "Calculateur d'intérêt composé", calc2: "Calculateur d'objectif d'investissement", nav1: "Intérêt composé", nav2: "Objectif d'investissement" },
+      de: { title: 'Investitionsrechner', calc1: 'Zinseszinsrechner', calc2: 'Investitionszielrechner', nav1: 'Zinseszins', nav2: 'Investitionsziel' },
+      ru: { title: 'Инвестиционные калькуляторы', calc1: 'Калькулятор сложных процентов', calc2: 'Калькулятор цели инвестирования', nav1: 'Сложные проценты', nav2: 'Цель инвестирования' },
+      es: { title: 'Calculadoras de inversión', calc1: 'Calculadora de interés compuesto', calc2: 'Calculadora de objetivo de инвестиции', nav1: 'Interés compuesto', nav2: 'Objetivo de inversión' },
+      zh: { title: '投资计算器', calc1: '复利计算器', calc2: '投资目标计算器', nav1: '复利', nav2: '投资目标' },
+      ja: { title: '投資計算機', calc1: '複利計算機', calc2: '投資目標計算機', nav1: '複利', nav2: '投資目標' }
     };
-    const languageNames = { ko: '한국어', en: 'English' };
+    const languageNames = { ko: '한국어', en: 'English', fr: 'Français', de: 'Deutsch', ru: 'Русский', es: 'Español', zh: '中文', ja: '日本語' };
 
     function populateLangs() {
       const sel = document.getElementById('lang-select'); sel.innerHTML = '';
