@@ -11,70 +11,64 @@
   </script>
 
   <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8252805944184403"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8252805944184403" crossorigin="anonymous"></script>
 
   <!-- Naver site verification -->
   <meta name="naver-site-verification" content="2128ade9f7f66d3b5ac39f6bede8cb23bdc9ea49" />
 
-  <!-- SEO & Social -->
-  <meta name="description" content="간편한 복리·적립식 수익률 계산기 – 투자원금, 기간, 수익률, 정기 적립을 한눈에! 다국어 지원 및 그래프 제공. 입력된 수치는 저장되지 않습니다." />
-  <link rel="icon" href="/interestcalc/favicon.ico" type="image/x-icon" />
-  <meta property="og:title" content="복리 계산기 • Compound Interest Calculator" />
-  <meta property="og:description" content="투자원금과 기간, 수익률을 입력하면 복리·적립식 수익률을 표와 그래프로 확인할 수 있어요." />
-  <meta property="og:image" content="/interestcalc/og-image.png" />
-  <meta property="og:url" content="https://www.racleweb.com/interestcalc/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="title">복리 계산기</title>
+
+  <!-- 다국어 검색 최적화 -->
+  <title id="page-title">복리 계산기 • Compound Interest Calculator • Calculateur d'intérêt composé • Zinseszinsrechner • Калькулятор сложных процентов • Calculadora de interés compuesto • 复利计算器 • 複利計算機</title>
+  <meta name="description" id="page-description" content="간편한 복리·적립식 수익률 계산기 – 다국어 지원. 투입 값은 저장되지 않습니다." />
+
+  <!-- hreflang 선언 -->
+  <link rel="alternate" hreflang="ko" href="https://www.racleweb.com/interestcalc/?hl=ko" />
+  <link rel="alternate" hreflang="en" href="https://www.racleweb.com/interestcalc/?hl=en" />
+  <link rel="alternate" hreflang="fr" href="https://www.racleweb.com/interestcalc/?hl=fr" />
+  <link rel="alternate" hreflang="de" href="https://www.racleweb.com/interestcalc/?hl=de" />
+  <link rel="alternate" hreflang="ru" href="https://www.racleweb.com/interestcalc/?hl=ru" />
+  <link rel="alternate" hreflang="es" href="https://www.racleweb.com/interestcalc/?hl=es" />
+  <link rel="alternate" hreflang="zh" href="https://www.racleweb.com/interestcalc/?hl=zh" />
+  <link rel="alternate" hreflang="ja" href="https://www.racleweb.com/interestcalc/?hl=ja" />
+  <link rel="alternate" hreflang="x-default" href="https://www.racleweb.com/interestcalc/" />
+
+  <link rel="icon" href="/interestcalc/favicon.ico" type="image/x-icon" />
 
   <style>
-    :root {
-      --bg: #f5f5f5;
-      --card-bg: #ffffff;
-      --text: #333333;
-      --accent: #4a90e2;
-      --accent-hover: #357ab8;
-      --border: #e0e0e0;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: 'Roboto', sans-serif; padding: 1rem; }
-    header { text-align: center; margin-bottom: 1rem; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; max-width: 800px; margin: 0 auto; }
-    h1 { font-size: 1.6rem; text-align: center; margin-bottom: 1rem; }
-    .top-bar { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
-    .lang-selector { display: flex; align-items: center; gap: 0.5rem; }
-    .lang-selector .icon { font-size: 1.2rem; }
-    select { padding: 0.5rem; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 4px; background: var(--card-bg); color: var(--text); max-width: 150px; width: 100%; }
-    .form { display: grid; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; }
-    label { margin-bottom: 0.5rem; font-size: 0.9rem; }
-    input, .form-group select { padding: 0.5rem; font-size: 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--card-bg); color: var(--text); width: 100%; }
-    .note { font-size: 0.8rem; color: #666; margin-top: 0.25rem; }
-    button { padding: 0.75rem; font-size: 1rem; border: none; border-radius: 4px; background: var(--accent); color: #fff; cursor: pointer; transition: background 0.3s; }
-    button:hover { background: var(--accent-hover); }
-    .instructions { font-size: 0.9rem; color: #555; background: #eef6ff; padding: 0.75rem; border-radius: 4px; margin-top: 1rem; }
-    #result { margin-top: 1.5rem; text-align: center; font-size: 1.1rem; }
-    #chart-container, #table-container { margin-top: 1rem; }
-    #return-chart { width: 100%; height: 300px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; table-layout: fixed; }
-    th, td { padding: 0.5rem; border: 1px solid var(--border); text-align: right; font-size: 0.9rem; word-break: break-word; }
-    th { background: var(--bg); }
-    th:first-child, td:first-child { text-align: center; }
-    .disclaimer { font-size: 0.75rem; color: #666; text-align: center; margin-top: 1rem; }
+    /* 기존 스타일 그대로 */
+    :root { --bg:#f5f5f5;--card-bg:#fff;--text:#333;--accent:#4a90e2;--accent-hover:#357ab8;--border:#e0e0e0; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;padding:1rem;}
+    header{text-align:center;margin-bottom:1rem;}
+    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:1.5rem;max-width:800px;margin:0 auto;}
+    h1{font-size:1.6rem;text-align:center;margin-bottom:1rem;}
+    .top-bar{display:flex;justify-content:flex-end;margin-bottom:1rem;}
+    .lang-selector{display:flex;align-items:center;gap:0.5rem;}
+    select{padding:0.5rem;font-size:0.9rem;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text);max-width:150px;width:100%;}
+    .form{display:grid;gap:1rem;}
+    .form-group{display:flex;flex-direction:column;}
+    label{margin-bottom:0.5rem;font-size:0.9rem;}
+    input,.form-group select{padding:0.5rem;font-size:1rem;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text);width:100%;}
+    .note{font-size:0.8rem;color:#666;margin-top:0.25rem;}
+    button{padding:0.75rem;font-size:1rem;border:none;border-radius:4px;background:var(--accent);color:#fff;cursor:pointer;transition:background 0.3s;}
+    button:hover{background:var(--accent-hover);}
+    .instructions{font-size:0.9rem;color:#555;background:#eef6ff;padding:0.75rem;border-radius:4px;margin-top:1rem;}
+    #result{margin-top:1.5rem;text-align:center;font-size:1.1rem;}
+    #chart-container,#table-container{margin-top:1rem;}
+    #return-chart{width:100%;height:300px;}
+    table{width:100%;border-collapse:collapse;margin-top:1rem;table-layout:fixed;}
+    th,td{padding:0.5rem;border:1px solid var(--border);text-align:right;font-size:0.9rem;word-break:break-word;}
+    th{background:var(--bg);}th:first-child,td:first-child{text-align:center;}
+    .disclaimer{font-size:0.75rem;color:#666;text-align:center;margin-top:1rem;}
   </style>
-
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
-    <a href="https://www.racleweb.com/">
-      <img src="logo.png" alt="RacleWeb" style="max-width:250px; height:auto;">
-    </a>
+    <a href="https://www.racleweb.com/"><img src="logo.png" alt="RacleWeb" style="max-width:250px;height:auto;"></a>
   </header>
-
   <div class="card">
     <div class="top-bar">
       <div class="lang-selector">
@@ -82,7 +76,6 @@
         <select id="lang-select"></select>
       </div>
     </div>
-
     <h1 data-i18n="title">복리 계산기</h1>
 
     <div class="form">
