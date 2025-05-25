@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HNN07XZ6Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}    
+    gtag('js', new Date());
+    gtag('config', 'G-4HNN07XZ6Z');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-8252805944184403" crossorigin="anonymous"></script>
+
+  <!-- Naver site verification -->
+  <meta name="naver-site-verification" content="2128ade9f7f66d3b5ac39f6bede8cb23bdc9ea49" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>손익비 계산기 • Risk-Reward Ratio Calculator</title>
+  <meta name="description" content="진입가와 손익비로 목표가 및 청산가격을 계산합니다. 입력값은 저장되지 않습니다." />
+
+  <style>
+    :root { --bg:#f5f5f5;--card-bg:#fff;--text:#333;--accent:#4a90e2;--accent-hover:#357ab8;--border:#e0e0e0; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;padding:1rem;}
+    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:1.5rem;max-width:800px;margin:0 auto;}
+    h1{text-align:center;font-size:1.6rem;margin-bottom:1rem;}
+    .form{display:grid;gap:1rem;}
+    .form-group{display:flex;flex-direction:column;}
+    label{margin-bottom:0.5rem;font-size:0.9rem;}
+    input, select{padding:0.5rem;font-size:1rem;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text);width:100%;}
+    button{padding:0.75rem;font-size:1rem;border:none;border-radius:4px;background:var(--accent);color:#fff;cursor:pointer;}
+    button:hover{background:var(--accent-hover);}
+    #result{margin-top:1.5rem;text-align:center;font-size:1.1rem;}
+    #rr-chart{width:100%;height:300px;margin-top:1rem;}
+    .note{font-size:0.8rem;color:#666;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="card">
+    <h1>손익비 계산기</h1>
+    <div class="form">
+      <div class="form-group">
+        <label for="mode-select">계산 모드</label>
+        <select id="mode-select">
+          <option value="ratio">손익비 계산</option>
+          <option value="target">목표가 계산</option>
+        </select>
+      </div>
+      <div class="form-group" id="entry-group">
+        <label for="entryPrice">진입 가격</label>
+        <input type="number" id="entryPrice" placeholder="100.00" />
+      </div>
+      <div class="form-group" id="stop-group">
+        <label for="stopLoss">손절 가격</label>
+        <input type="number" id="stopLoss" placeholder="95.00" />
+      </div>
+      <div class="form-group" id="target-group">
+        <label for="targetPrice">목표 가격</label>
+        <input type="number" id="targetPrice" placeholder="110.00" />
+      </div>
+      <div class="form-group" id="ratio-group" style="display:none;">
+        <label for="rrRatio">손익비 (예:2.0은 1:2)</label>
+        <input type="number" id="rrRatio" step="0.01" placeholder="2.00" />
+      </div>
+      <div class="form-group">
+        <label for="leverage">레버리지 (옵션, 기본 1x)</label>
+        <input type="number" id="leverage" step="0.1" placeholder="1" />
+      </div>
+      <div class="form-group">
+        <label for="fee">수수료 (%) (옵션, 기본 0%)</label>
+        <input type="number" id="fee" step="0.01" placeholder="0" />
+      </div>
+      <button id="calculate">계산하기</button>
+    </div>
+    <div id="result"></div>
+    <canvas id="rr-chart"></canvas>
+  </div>
+
+  <script>
+    const modeEl = document.getElementById('mode-select');
+    const entryEl = document.getElementById('entryPrice');
+    const stopEl = document.getElementById('stopLoss');
+    const targetEl = document.getElementById('targetPrice');
+    const ratioEl = document.getElementById('rrRatio');
+    const levEl = document.getElementById('leverage');
+    const feeEl = document.getElementById('fee');
+
+    function updateMode() {
+      const m = modeEl.value;
+      stopEl.parentElement.style.display = m==='ratio' ? 'block' : 'none';
+      targetEl.parentElement.style.display = m==='ratio' ? 'block' : 'none';
+      ratioEl.parentElement.style.display = m==='target' ? 'block' : 'none';
+    }
+    modeEl.addEventListener('change', updateMode);
+    updateMode();
+
+    let chart;
+    function renderChart(p, l) {
+      const ctx = document.getElementById('rr-chart').getContext('2d');
+      if(chart) chart.destroy();
+      chart = new Chart(ctx, {type:'bar',data:{labels:['Profit','Loss'],datasets:[{data:[p,l]}]},options:{responsive:true}});
+    }
+
+    document.getElementById('calculate').addEventListener('click', ()=>{
+      const mode = modeEl.value;
+      const entry = parseFloat(entryEl.value);
+      const lev = parseFloat(levEl.value) > 0 ? parseFloat(levEl.value) : 1;
+      const fee = parseFloat(feeEl.value) >= 0 ? parseFloat(feeEl.value)/100 : 0;
+      if(isNaN(entry) || entry<=0) {resultErr(); return;}
+
+      // Liquidation price = entry * (1 - 1/lev)
+      const liq = +(entry * (1 - 1/lev)).toFixed(8);
+      let target;
+
+      if(mode==='ratio'){
+        const stop = parseFloat(stopEl.value);
+        const ratio = parseFloat(ratioEl.value);
+        if(isNaN(stop)||isNaN(ratio)||entry<=stop||ratio<=0){resultErr(); return;}
+        const grossProfit = (entry - stop)*ratio;
+        target = +(entry + grossProfit).toFixed(8);
+      } else {
+        const ratio = parseFloat(ratioEl.value);
+        if(isNaN(ratio)||ratio<=0){resultErr(); return;}
+        const risk = entry - liq;
+        target = +(entry + risk*ratio).toFixed(8);
+      }
+
+      // Net P/L with leverage and fee
+      const grossProfitAmt = (target - entry) * lev;
+      const grossLossAmt = (entry - liq) * lev;
+      const netProfit = +(grossProfitAmt * (1 - fee)).toFixed(8);
+      const netLoss = +(grossLossAmt * (1 + fee)).toFixed(8);
+      const rrNet = +(netProfit/netLoss).toFixed(2);
+
+      document.getElementById('result').innerHTML = `목표가: <strong>${target}</strong><br>청산가: <strong>${liq}</strong><br>`+
+        `레버리지: <strong>${lev}x</strong>, 수수료: <strong>${(fee*100).toFixed(2)}%</strong><br>`+
+        `Net R/R: <strong>${rrNet}</strong>`;
+      renderChart(netProfit, netLoss);
+
+      function resultErr(){
+        document.getElementById('result').textContent='입력 값을 확인해주세요.';
+      }
+    });
+  </script>
+</body>
+</html>
