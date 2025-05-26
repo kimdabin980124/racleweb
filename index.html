@@ -45,6 +45,22 @@
     select { padding: 0.5rem; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 4px; background: var(--card-bg); color: var(--text); max-width: 120px; }
     .link-button { display: block; padding: 0.75rem; margin: 0.5rem 0; font-size: 1rem; border: none; border-radius: 4px; background: var(--accent); color: #fff; text-decoration: none; transition: background 0.3s; }
     .link-button:hover { background: var(--accent-hover); }
+    .footer {
+      margin: 2rem auto;
+      max-width: 800px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.4;
+    }
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -88,6 +104,16 @@
         각 계산기는 단순한 값 입력만으로 직관적인 차트와 표를 제공하며, 시뮬레이션 결과를 바탕으로 최적의 투자 전략을 탐색할 수 있도록 돕습니다. 언제 어디서나 무료로 이용 가능하며, 입력된 데이터는 저장되지 않아 개인정보 걱정 없이 편하게 사용하실 수 있습니다.
       </p>
     </section>
+
+
+   <footer class="footer">
+    <a href="/terms/" data-i18n="terms">이용약관</a> |
+    <a href="/privacy/" data-i18n="privacy">개인정보처리방침</a>
+    <p data-i18n="copyright">
+      © 2025 RacleWeb. All rights reserved.
+    </p>
+  </footer>
+  
   <script>
     const translations = {
       ko: {
@@ -96,7 +122,10 @@
         calc1: '복리 계산기', calc2: '투자 목표 계산기', calc3: 'ROI 계산기', calc4: '손익비 계산기',
         introTitle: 'RacleWeb 투자 계산기 소개',
         introPara1: 'RacleWeb은 개인 투자자와 트레이더를 위한 올인원 계산기 모음 사이트입니다. 복리 계산, 투자 목표 설정, ROI 산출, 손익비 분석까지 4가지 핵심 툴을 통해 나만의 투자 계획을 쉽고 빠르게 세울 수 있습니다.',
-        introPara2: '각 계산기는 단순한 값 입력만으로 직관적인 차트와 표를 제공하며, 시뮬레이션 결과를 바탕으로 최적의 투자 전략을 탐색할 수 있도록 돕습니다. 언제 어디서나 무료로 이용 가능하며, 입력된 데이터는 저장되지 않아 개인정보 걱정 없이 편하게 사용하실 수 있습니다.'
+        introPara2: '각 계산기는 단순한 값 입력만으로 직관적인 차트와 표를 제공하며, 시뮬레이션 결과를 바탕으로 최적의 투자 전략을 탐색할 수 있도록 돕습니다. 언제 어디서나 무료로 이용 가능하며, 입력된 데이터는 저장되지 않아 개인정보 걱정 없이 편하게 사용하실 수 있습니다.',
+        terms: "이용약관",
+        privacy: "개인정보처리방침",
+        copyright: "© 2025 RacleWeb. All rights reserved."
       },
       en: {
         title: 'Investment Calculators',
@@ -104,7 +133,10 @@
         calc1: 'Compound Interest Calculator', calc2: 'Investment Goal Calculator', calc3: 'ROI Calculator', calc4: 'Risk–Reward Ratio Calculator',
         introTitle: 'Welcome to RacleWeb Calculator Suite',
         introPara1: 'RacleWeb offers an all-in-one suite of calculators for retail investors and traders. From compound interest to goal planning, ROI, and risk-reward analysis, our four core tools help you build your investment strategy quickly and accurately.',
-        introPara2: 'Each calculator delivers intuitive charts and tables based on your inputs, enabling you to explore optimal strategies based on simulation results. Free to use anywhere, and no data is stored—your privacy is always protected.'
+        introPara2: 'Each calculator delivers intuitive charts and tables based on your inputs, enabling you to explore optimal strategies based on simulation results. Free to use anywhere, and no data is stored—your privacy is always protected.',
+         terms: "Terms of Service",
+        privacy: "Privacy Policy",
+        copyright: "© 2025 RacleWeb. All rights reserved."
       },
       fr: {
         title: "Calculatrices d'investissement",
@@ -112,7 +144,10 @@
         calc1: "Calculateur d'intérêt composé", calc2: "Calculateur d'objectif d'investissement", calc3: "Calculateur de ROI", calc4: "Calculateur de ratio risque/rendement",
         introTitle: "Présentation de RacleWeb Calculator Suite",
         introPara1: "RacleWeb propose une suite de calculateurs tout-en-un pour investisseurs particuliers et traders. Du calcul d'intérêts composés à la planification d'objectifs, ROI et analyse risque/rendement, nos quatre outils principaux vous aident à élaborer votre stratégie d'investissement rapidement et précisément.",
-        introPara2: "Chaque calculateur fournit des graphiques et tableaux intuitifs basés sur vos entrées, vous permettant d'explorer les stratégies optimales selon les résultats des simulations. Gratuit et sans enregistrement de données—votre vie privée est protégée."
+        introPara2: "Chaque calculateur fournit des graphiques et tableaux intuitifs basés sur vos entrées, vous permettant d'explorer les stratégies optimales selon les résultats des simulations. Gratuit et sans enregistrement de données—votre vie privée est protégée.",
+        terms: "Conditions d’utilisation",
+        privacy: "Politique de confidentialité",
+        copyright: "© 2025 RacleWeb. Tous droits réservés."
       },
       de: {
         title: 'Investitionsrechner',
@@ -120,7 +155,10 @@
         calc1: 'Zinseszinsrechner', calc2: 'Investitionszielrechner', calc3: 'ROI Rechner', calc4: 'Risiko-Ertragsrechner',
         introTitle: 'Vorstellung der RacleWeb Rechner-Suite',
         introPara1: 'RacleWeb bietet eine All-in-One-Rechnersuite für Privatanleger und Trader. Von Zinseszins über Zielplanung, Rendite bis zur Risiko-Ertrags-Analyse unterstützen unsere vier Haupt-Tools Sie dabei, Ihre Anlagestrategie schnell und präzise zu erstellen.',
-        introPara2: 'Jeder Rechner liefert intuitive Diagramme und Tabellen basierend auf Ihren Eingaben, sodass Sie optimale Strategien anhand der Simulationsergebnisse erkunden können. Kostenlos nutzbar und ohne Datenspeicherung—Ihr Datenschutz ist garantiert.'
+        introPara2: 'Jeder Rechner liefert intuitive Diagramme und Tabellen basierend auf Ihren Eingaben, sodass Sie optimale Strategien anhand der Simulationsergebnisse erkunden können. Kostenlos nutzbar und ohne Datenspeicherung—Ihr Datenschutz ist garantiert.',
+        terms: "Nutzungsbedingungen",
+        privacy: "Datenschutzerklärung",
+        copyright: "© 2025 RacleWeb. Alle Rechte vorbehalten."
       },
       ru: {
         title: 'Инвестиционные калькуляторы',
@@ -128,7 +166,10 @@
         calc1: 'Калькулятор сложных процентов', calc2: 'Калькулятор цели инвестирования', calc3: 'Калькулятор ROI', calc4: 'Калькулятор риск/доход',
         introTitle: 'Обзор RacleWeb Calculator Suite',
         introPara1: 'RacleWeb предлагает универсальный набор калькуляторов для инвесторов и трейдеров. От расчёта сложных процентов до планирования целей, ROI и анализа риск/доход—наши четыре ключевых инструмента помогут быстро и точно разработать стратегию.',
-        introPara2: 'Каждый калькулятор предоставляет наглядные графики и таблицы на основе введённых данных, позволяя исследовать оптимальные стратегии по результатам моделирования. Бесплатно и без сохранения данных—ваша конфиденциальность защищена.'
+        introPara2: 'Каждый калькулятор предоставляет наглядные графики и таблицы на основе введённых данных, позволяя исследовать оптимальные стратегии по результатам моделирования. Бесплатно и без сохранения данных—ваша конфиденциальность защищена.',
+        terms: "Условия использования",
+        privacy: "Политика конфиденциальности",
+        copyright: "© 2025 RacleWeb. Все права защищены."
       },
       es: {
         title: 'Calculadoras de inversión',
@@ -136,7 +177,10 @@
         calc1: 'Calculadora de interés compuesto', calc2: 'Calculadora de objetivo de inversión', calc3: 'Calculadora de ROI', calc4: 'Calculadora de ratio riesgo-beneficio',
         introTitle: 'Presentación de RacleWeb Calculator Suite',
         introPara1: 'RacleWeb ofrece un conjunto de calculadoras todo en uno para inversores y traders. Desde interés compuesto hasta planificación de objetivos, ROI y análisis riesgo-beneficio, nuestras cuatro herramientas principales te ayudan a diseñar tu estrategia de inversión de forma rápida y precisa.',
-        introPara2: 'Cada calculadora muestra gráficos y tablas intuitivas según tus entradas, permitiéndote explorar estrategias óptimas en función de los resultados de simulación. Gratis y sin guardar datos—tu privacidad está protegida.'
+        introPara2: 'Cada calculadora muestra gráficos y tablas intuitivas según tus entradas, permitiéndote explorar estrategias óptimas en función de los resultados de simulación. Gratis y sin guardar datos—tu privacidad está protegida.',
+         terms: "Términos de servicio",
+        privacy: "Política de privacidad",
+        copyright: "© 2025 RacleWeb. Todos los derechos reservados."
       },
       zh: {
         title: '投资计算器',
@@ -144,7 +188,10 @@
         calc1: '复利计算器', calc2: '投资目标计算器', calc3: 'ROI 计算器', calc4: '风险收益比计算器',
         introTitle: 'RacleWeb 投资计算器套件介绍',
         introPara1: 'RacleWeb 为个人投资者和交易者提供一体化的计算器套件。无论是复利计算、目标规划、投资回报率还是风险收益比分析，我们的四大核心工具都能帮助您快速、精准地制定投资策略。',
-        introPara2: '每个计算器都会根据您的输入提供直观的图表和表格，帮助您根据模拟结果探索最佳策略。完全免费使用，不存储数据——您的隐私得到保护。'
+        introPara2: '每个计算器都会根据您的输入提供直观的图表和表格，帮助您根据模拟结果探索最佳策略。完全免费使用，不存储数据——您的隐私得到保护。',
+         terms: "服务条款",
+        privacy: "隐私政策",
+        copyright: "© 2025 RacleWeb。保留所有权利。"
       },
       ja: {
         title: '投資計算機',
@@ -152,7 +199,10 @@
         calc1: '複利計算機', calc2: '投資目標計算機', calc3: 'ROI 計算機', calc4: '損益比率計算機',
         introTitle: 'RacleWeb 計算ツールスイートの紹介',
         introPara1: 'RacleWeb は個人投資家やトレーダー向けのオールインワン計算ツールスイートです。複利計算から目標設定、ROI、リスクリワード比分析まで、4つの主要ツールで投資戦略を迅速かつ正確に構築できます。',
-        introPara2: '各計算ツールは入力に基づく直感的なグラフと表を提供し、シミュレーション結果に基づいて最適な戦略を検討できます。完全無料でデータは保存されず、プライバシーが保護されます。'
+        introPara2: '各計算ツールは入力に基づく直感的なグラフと表を提供し、シミュレーション結果に基づいて最適な戦略を検討できます。完全無料でデータは保存されず、プライバシーが保護されます。',
+        terms: "利用規約",
+        privacy: "プライバシーポリシー",
+        copyright: "© 2025 RacleWeb. 無断転載を禁じます。"
       }
     };
 
