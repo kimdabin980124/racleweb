@@ -55,6 +55,7 @@
       <a href="/interestcalc/" class="nav-link" data-i18n="nav1">복리 계산기</a>
       <a href="/investmentgoal/" class="nav-link" data-i18n="nav2">투자 목표 계산기</a>
       <a href="/roicalc/" class="nav-link" data-i18n="nav3">ROI 계산기</a>
+      <a href="/riskrewordcalc/" class="nav-link" data-i18n="nav4">손익비 계산기</a>
     </nav>
   </header>
 
@@ -70,18 +71,19 @@
     <a href="/interestcalc/" class="link-button" id="link1" data-i18n="calc1">복리 계산기</a>
     <a href="/investmentgoal/" class="link-button" id="link2" data-i18n="calc2">투자 목표 계산기</a>
     <a href="/roicalc/" class="link-button" id="link3" data-i18n="calc3">ROI 계산기</a>
+    <a href="/riskrewordcalc/" class="link-button" id="link4" data-i18n="calc4">손익비 계산기</a>
   </div>
 
   <script>
     const translations = {
-      ko: { title: '투자 계산기', calc1: '복리 계산기', calc2: '투자 목표 계산기', calc3: 'ROI 계산기', nav1: '복리 계산기', nav2: '투자 목표 계산기', nav3: 'ROI 계산기' },
-      en: { title: 'Investment Calculators', calc1: 'Compound Interest Calculator', calc2: 'Investment Goal Calculator', calc3: 'ROI Calculator', nav1: 'Compound Interest', nav2: 'Investment Goal', nav3: 'ROI Calculator' },
-      fr: { title: "Calculatrices d'investissement", calc1: "Calculateur d'intérêt composé", calc2: "Calculateur d'objectif d'investissement", calc3: "Calculateur de ROI", nav1: "Intérêt composé", nav2: "Objectif d'investissement", nav3: "Calculateur de ROI" },
-      de: { title: 'Investitionsrechner', calc1: 'Zinseszinsrechner', calc2: 'Investitionszielrechner', calc3: 'ROI Rechner', nav1: 'Zinseszins', nav2: 'Investitionsziel', nav3: 'ROI Rechner' },
-      ru: { title: 'Инвестиционные калькуляторы', calc1: 'Калькулятор сложных процентов', calc2: 'Калькулятор цели инвестирования', calc3: 'Калькулятор ROI', nav1: 'Сложные проценты', nav2: 'Цель инвестирования', nav3: 'Калькулятор ROI' },
-      es: { title: 'Calculadoras de inversión', calc1: 'Calculadora de interés compuesto', calc2: 'Calculadora de objetivo de inversión', calc3: 'Calculadora de ROI', nav1: 'Interés compuesto', nav2: 'Objetivo de inversión', nav3: 'Calculadora de ROI' },
-      zh: { title: '投资计算器', calc1: '复利计算器', calc2: '投资目标计算器', calc3: 'ROI 计算器', nav1: '复利', nav2: '投资目标', nav3: 'ROI 计算器' },
-      ja: { title: '投資計算機', calc1: '複利計算機', calc2: '投資目標計算機', calc3: 'ROI 計算機', nav1: '複利', nav2: '投資目標', nav3: 'ROI 計算機' }
+      ko: { title: '투자 계산기', calc1: '복리 계산기', calc2: '투자 목표 계산기', calc3: 'ROI 계산기', calc4: '손익비 계산기' , nav1: '복리 계산기', nav2: '투자 목표 계산기', nav3: 'ROI 계산기', nav4: '손익비 계산기'  },
+      en: { title: 'Investment Calculators', calc1: 'Compound Interest Calculator', calc2: 'Investment Goal Calculator', calc3: 'ROI Calculator', calc4: 'Risk–Reward Ratio Calculator',  nav1: 'Compound Interest', nav2: 'Investment Goal', nav3: 'ROI Calculator', nav4: 'Risk–Reward Ratio Calculator' },
+      fr: { title: "Calculatrices d'investissement", calc1: "Calculateur d'intérêt composé", calc2: "Calculateur d'objectif d'investissement", calc3: "Calculateur de ROI",  calc4: "	Calculateur de ratio risque/rendement" , nav1: "Intérêt composé", nav2: "Objectif d'investissement", nav3: "Calculateur de ROI" , nav4: "	Calculateur de ratio risque/rendement" },
+      de: { title: 'Investitionsrechner', calc1: 'Zinseszinsrechner', calc2: 'Investitionszielrechner', calc3: 'ROI Rechner', calc4: 'Risiko-Ertragsrechner', nav1: 'Zinseszins', nav2: 'Investitionsziel', nav3: 'ROI Rechner', nav4: 'Risiko-Ertragsrechner' },
+      ru: { title: 'Инвестиционные калькуляторы', calc1: 'Калькулятор сложных процентов', calc2: 'Калькулятор цели инвестирования', calc3: 'Калькулятор ROI', calc4: 'Калькулятор соотношения риск/вознаграждение' , nav1: 'Сложные проценты', nav2: 'Цель инвестирования', nav3: 'Калькулятор ROI' , nav4: 'Калькулятор соотношения риск/вознаграждение'},
+      es: { title: 'Calculadoras de inversión', calc1: 'Calculadora de interés compuesto', calc2: 'Calculadora de objetivo de inversión', calc3: 'Calculadora de ROI', calc4: 'Calculadora de ratio riesgo-beneficio' , nav1: 'Interés compuesto', nav2: 'Objetivo de inversión', nav3: 'Calculadora de ROI', nav4: 'Calculadora de ratio riesgo-beneficio' },
+      zh: { title: '投资计算器', calc1: '复利计算器', calc2: '投资目标计算器', calc3: 'ROI 计算器', calc4: '风险收益比计算器', nav1: '复利', nav2: '投资目标', nav3: 'ROI 计算器' , nav4:'风险收益比计算器'},
+      ja: { title: '投資計算機', calc1: '複利計算機', calc2: '投資目標計算機', calc3: 'ROI 計算機', calc4: '損益比率計算機', nav1: '複利', nav2: '投資目標', nav3: 'ROI 計算機' , nav4:'損益比率計算機'}
     };
     const languageNames = { ko: '한국어', en: 'English', fr: 'Français', de: 'Deutsch', ru: 'Русский', es: 'Español', zh: '中文', ja: '日本語' };
 
