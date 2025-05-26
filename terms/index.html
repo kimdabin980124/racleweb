@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title data-i18n="termsTitle">이용약관</title>
-  <link rel="icon" href="/favicon.ico"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
   <style>
-    :root{--bg:#f5f5f5;--card-bg:#fff;--text:#333;--accent:#4a90e2;--border:#e0e0e0;}
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;padding:1rem;}
-    header, footer{max-width:800px;margin:0 auto;}
-    .top-nav{display:flex;justify-content:center;gap:1rem;margin:1rem 0;}
-    .nav-link{color:var(--accent);text-decoration:none;}
-    .nav-link:hover{text-decoration:underline;}
-    .lang-selector{float:right;}
-    .content{background:var(--card-bg);padding:1.5rem;border:1px solid var(--border);border-radius:8px;max-width:800px;margin:1rem auto;line-height:1.6;}
-    .content h1{margin-bottom:1rem;}
-    .footer{font-size:0.8rem;color:#666;text-align:center;margin:2rem auto;}
-    .footer a{color:var(--accent);text-decoration:none;margin:0 .5rem;}
-    .footer a:hover{text-decoration:underline;}
+    :root {
+      --bg:#f5f5f5; --card-bg:#ffffff; --text:#333333;
+      --accent:#4a90e2; --accent-hover:#357ab8; --border:#e0e0e0;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      background:var(--bg); color:var(--text);
+      font-family:'Roboto',sans-serif; padding:1rem;
+    }
+    header, footer { max-width:800px; margin:0 auto; }
+    .top-nav {
+      display:flex; justify-content:center;
+      gap:1rem; margin:1rem 0;
+    }
+    .nav-link {
+      color:var(--accent); text-decoration:none; font-size:1rem;
+    }
+    .nav-link:hover { text-decoration:underline; }
+    .lang-selector { float:right; }
+    .lang-selector select {
+      padding:0.5rem; font-size:0.9rem;
+      border:1px solid var(--border); border-radius:4px;
+    }
+    .content {
+      background:var(--card-bg);
+      padding:1.5rem; border:1px solid var(--border);
+      border-radius:8px; line-height:1.6;
+    }
+    .content h1 { margin-bottom:1rem; font-size:1.4rem; }
+    .content h2 { margin:1rem 0 0.5rem; font-size:1.2rem; }
+    .footer {
+      text-align:center; font-size:0.8rem; color:#666;
+      margin:2rem auto;
+    }
+    .footer a {
+      color:var(--accent); text-decoration:none; margin:0 .5rem;
+    }
+    .footer a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
@@ -37,19 +63,25 @@
 
   <section class="content">
     <h1 data-i18n="termsTitle">이용약관</h1>
-    <p data-i18n="termsPara1">
-      본 이용약관은 RacleWeb(이하 “회사”라 함)이 제공하는 웹사이트 및 관련 서비스(이하 “서비스”라 함)를 이용함에 있어 회사와 이용자의 권리·의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
-    </p>
+    <p data-i18n="termsPara1">본 이용약관은 RacleWeb(이하 “회사”라 함)이 제공하는 웹사이트 및 관련 서비스(이하 “서비스”라 함)를 이용함에 있어 회사와 이용자의 권리·의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+
     <h2 data-i18n="terms1Title">제1조 (목적)</h2>
-    <p data-i18n="terms1Para">
-      이 약관은 회사가 제공하는 모든 서비스의 이용에 적용됩니다.
-    </p>
+    <p data-i18n="terms1Para">이 약관은 회사가 제공하는 모든 서비스의 이용에 적용됩니다.</p>
+
     <h2 data-i18n="terms2Title">제2조 (정의)</h2>
-    <p data-i18n="terms2Para">
-      1. “서비스”라 함은 회사가 제공하는 웹사이트 및 부가서비스를 의미합니다.<br>
-      2. “이용자”라 함은 이 약관에 따라 회사가 제공하는 서비스를 받는 회원 및 비회원을 말합니다.
-    </p>
-    <!-- 여기부터 추가 조항들… -->
+    <p data-i18n="terms2Para">1. “서비스”라 함은 회사가 제공하는 웹사이트 및 부가서비스를 의미합니다.<br>2. “이용자”라 함은 이 약관에 따라 회사가 제공하는 서비스를 받는 회원 및 비회원을 말합니다.</p>
+
+    <h2 data-i18n="terms3Title">제3조 (서비스 이용)</h2>
+    <p data-i18n="terms3Para"></p>
+
+    <h2 data-i18n="terms4Title">제4조 (이용자의 의무)</h2>
+    <p data-i18n="terms4Para"></p>
+
+    <h2 data-i18n="terms5Title">제5조 (면책조항)</h2>
+    <p data-i18n="terms5Para"></p>
+
+    <h2 data-i18n="terms6Title">제6조 (준거법 및 재판관할)</h2>
+    <p data-i18n="terms6Para"></p>
   </section>
 
   <footer class="footer">
@@ -61,59 +93,179 @@
   <script>
     const translations = {
       ko: {
-        title: '투자 계산기',
-        nav1:'복리 계산기',nav2:'투자 목표 계산기',nav3:'ROI 계산기',nav4:'손익비 계산기',
+        nav1:'복리 계산기', nav2:'투자 목표 계산기', nav3:'ROI 계산기', nav4:'손익비 계산기',
         termsTitle:'이용약관',
         termsPara1:'본 이용약관은 RacleWeb(이하 “회사”라 함)이 제공하는 웹사이트 및 관련 서비스(이하 “서비스”라 함)를 이용함에 있어 회사와 이용자의 권리·의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.',
         terms1Title:'제1조 (목적)',
         terms1Para:'이 약관은 회사가 제공하는 모든 서비스의 이용에 적용됩니다.',
         terms2Title:'제2조 (정의)',
         terms2Para:'1. “서비스”라 함은 회사가 제공하는 웹사이트 및 부가서비스를 의미합니다.\n2. “이용자”라 함은 이 약관에 따라 회사가 제공하는 서비스를 받는 회원 및 비회원을 말합니다.',
-        terms:'이용약관',privacy:'개인정보처리방침',copyright:'© 2025 RacleWeb. All rights reserved.'
+        terms3Title:'제3조 (서비스 이용)',
+        terms3Para:'이용자는 회사가 제공하는 계산기 서비스를 무료로 이용할 수 있습니다.\n회사는 시스템 점검·업데이트 등을 위해 제공 시간을 일시 중단할 수 있습니다.',
+        terms4Title:'제4조 (이용자의 의무)',
+        terms4Para:'이용자는 서비스 이용 시 다음 행위를 해서는 안 됩니다:\n1. 타인의 정보·권리를 침해하거나 명예를 훼손하는 행위\n2. 서비스 운영을 방해하는 행위\n3. 불법·부당한 목적으로 서비스를 이용하는 행위',
+        terms5Title:'제5조 (면책조항)',
+        terms5Para:'회사는 천재지변, 서버 장애 등 회사 책임이 없는 사유로 인한 서비스 중단·오류에 대해 책임을 지지 않습니다.\n또한 외부 링크된 사이트의 콘텐츠에 대해서도 책임을 지지 않습니다.',
+        terms6Title:'제6조 (준거법 및 재판관할)',
+        terms6Para:'이 약관의 해석 및 적용은 대한민국 법률을 따르며,\n서비스 이용과 관련한 분쟁은 서울중앙지방법원을 1심 관할 법원으로 합니다.',
+        terms:'이용약관', privacy:'개인정보처리방침',
+        copyright:'© 2025 RacleWeb. All rights reserved.'
       },
       en: {
-        title:'Investment Calculators',
-        nav1:'Compound Interest',nav2:'Investment Goal',nav3:'ROI Calculator',nav4:'Risk–Reward Ratio',
+        nav1:'Compound Interest', nav2:'Investment Goal', nav3:'ROI Calculator', nav4:'Risk–Reward Ratio',
         termsTitle:'Terms of Service',
-        termsPara1:'These Terms of Service (“Terms”) govern your access to and use of RacleWeb’s website and related services (collectively, the “Services”).',
+        termsPara1:'These Terms govern your use of RacleWeb’s website and related services (the “Services”) provided by RacleWeb (“the Company”).',
         terms1Title:'Article 1 (Purpose)',
-        terms1Para:'These Terms apply to all Services provided by RacleWeb.',
+        terms1Para:'These Terms apply to all use of the Services provided by the Company.',
         terms2Title:'Article 2 (Definitions)',
-        terms2Para:'1. “Services” means the website and related services provided by RacleWeb.\n2. “User” means any person who uses the Services under these Terms.',
-        terms:'Terms of Service',privacy:'Privacy Policy',copyright:'© 2025 RacleWeb. All rights reserved.'
+        terms2Para:'1. “Services” means the website and additional services provided by the Company.\n2. “User” means any individual who uses the Services under these Terms.',
+        terms3Title:'Article 3 (Use of Service)',
+        terms3Para:'Users may use the calculator services provided by the Company free of charge.\nThe Company may suspend service availability temporarily for system maintenance or updates.',
+        terms4Title:'Article 4 (User Obligations)',
+        terms4Para:'Users shall not engage in the following when using the Service:\n1. Infringing on others’ information or rights, or defaming them;\n2. Interfering with the operation of the Service;\n3. Using the Service for illegal or improper purposes.',
+        terms5Title:'Article 5 (Disclaimer)',
+        terms5Para:'The Company shall not be liable for any service suspension or errors due to causes beyond its control, such as force majeure or server failures.\nThe Company is also not responsible for the content of externally linked sites.',
+        terms6Title:'Article 6 (Governing Law and Jurisdiction)',
+        terms6Para:'These Terms shall be governed by the laws of the Republic of Korea, and disputes arising in connection with the Service shall be subject to the exclusive jurisdiction of the Seoul Central District Court as the court of first instance.',
+        terms:'Terms of Service', privacy:'Privacy Policy',
+        copyright:'© 2025 RacleWeb. All rights reserved.'
       },
       fr: {
-        /* …“Conditions d’utilisation” 번역… */
+        nav1:'Intérêt composé', nav2:'Objectif d’investissement', nav3:'Calculateur de ROI', nav4:'Calculateur risque/rendement',
+        termsTitle:'Conditions d’utilisation',
+        termsPara1:'Les présentes Conditions d’utilisation régissent votre accès au site Web RacleWeb et aux services associés (les « Services ») fournis par RacleWeb (« la Société »).',
+        terms1Title:'Article 1 (Objet)',
+        terms1Para:'Les présentes Conditions s’appliquent à toute utilisation des Services fournis par la Société.',
+        terms2Title:'Article 2 (Définitions)',
+        terms2Para:'1. « Services » désigne le site Web et les services additionnels fournis par la Société.\n2. « Utilisateur » désigne toute personne qui utilise les Services conformément aux présentes Conditions.',
+        terms3Title:'Article 3 (Utilisation du Service)',
+        terms3Para:'Les utilisateurs peuvent utiliser gratuitement les services de calcul fournis par la Société.\nLa Société peut suspendre temporairement la disponibilité du service pour des opérations de maintenance système ou des mises à jour.',
+        terms4Title:'Article 4 (Obligations de l’Utilisateur)',
+        terms4Para:'L’utilisateur s’engage à ne pas effectuer les actions suivantes lors de l’utilisation du Service :\n1. Porter atteinte aux informations ou aux droits d’autrui, ou diffamer une personne ;\n2. Perturber le fonctionnement du Service ;\n3. Utiliser le Service à des fins illégales ou inappropriées.',
+        terms5Title:'Article 5 (Clause de non-responsabilité)',
+        terms5Para:'La Société n’est pas responsable des interruptions de service ou des erreurs dues à des causes indépendantes de sa volonté, telles que des cas de force majeure ou des défaillances de serveur.\nLa Société n’est pas non plus responsable du contenu des sites externes liés.',
+        terms6Title:'Article 6 (Droit applicable et juridiction)',
+        terms6Para:'Les présentes Conditions sont régies par les lois de la République de Corée et tout litige lié au Service sera soumis à la compétence exclusive du tribunal de district central de Séoul en première instance.',
+        terms:'Conditions d’utilisation', privacy:'Politique de confidentialité',
+        copyright:'© 2025 RacleWeb. Tous droits réservés.'
       },
       de: {
-        /* …“Nutzungsbedingungen” 번역… */
+        nav1:'Zinseszins', nav2:'Investitionsziel', nav3:'ROI Rechner', nav4:'Risiko-Ertragsrechner',
+        termsTitle:'Nutzungsbedingungen',
+        termsPara1:'Diese Nutzungsbedingungen regeln Ihre Nutzung der Website RacleWeb und der damit verbundenen Dienste (die „Dienste“), die von RacleWeb (das „Unternehmen“) bereitgestellt werden.',
+        terms1Title:'§ 1 (Zweck)',
+        terms1Para:'Diese Bedingungen gelten für alle Nutzungen der vom Unternehmen bereitgestellten Dienste.',
+        terms2Title:'§ 2 (Definitionen)',
+        terms2Para:'1. „Dienste“ bezeichnet die Website und zusätzliche Dienste, die vom Unternehmen bereitgestellt werden.\n2. „Nutzer“ bezeichnet jede Person, die die Dienste gemäß diesen Bedingungen nutzt.',
+        terms3Title:'§ 3 (Nutzung des Dienstes)',
+        terms3Para:'Nutzer können die von der Gesellschaft bereitgestellten Rechnerdienste kostenlos nutzen.\nDie Gesellschaft kann die Dienstverfügbarkeit vorübergehend für Systemwartungen oder Updates aussetzen.',
+        terms4Title:'§ 4 (Pflichten des Nutzers)',
+        terms4Para:'Der Nutzer darf bei der Nutzung des Dienstes nicht Folgendes tun:\n1. Die Informationen oder Rechte Dritter verletzen oder diffamieren;\n2. Den Betrieb des Dienstes stören;\n3. Den Dienst für illegale oder unzulässige Zwecke nutzen.',
+        terms5Title:'§ 5 (Haftungsausschluss)',
+        terms5Para:'Das Unternehmen haftet nicht für Dienstunterbrechungen oder Fehler aufgrund von Umständen, die außerhalb seiner Kontrolle liegen, wie höhere Gewalt oder Serverausfälle.\nDas Unternehmen ist auch nicht verantwortlich für Inhalte externer verlinkter Websites.',
+        terms6Title:'§ 6 (Anwendbares Recht und Gerichtsstand)',
+        terms6Para:'Diese Bedingungen unterliegen dem Recht der Republik Korea, und alle Streitigkeiten im Zusammenhang mit dem Dienst unterliegen der ausschließlichen Zuständigkeit des Seoul Central District Court in erster Instanz.',
+        terms:'Nutzungsbedingungen', privacy:'Datenschutzerklärung',
+        copyright:'© 2025 RacleWeb. Alle Rechte vorbehalten.'
       },
       ru: {
-        /* …“Условия использования” 번역… */
+        nav1:'Сложные проценты', nav2:'Цель инвестирования', nav3:'Калькулятор ROI', nav4:'Калькулятор риск/доход',
+        termsTitle:'Условия использования',
+        termsPara1:'Настоящие Условия использования регулируют использование вами веб-сайта RacleWeb и связанных с ним сервисов («Услуги»), предоставляемых компанией RacleWeb («Компания»).',
+        terms1Title:'Статья 1 (Цель)',
+        terms1Para:'Настоящие Условия применяются ко всем аспектам использования сервисов, предоставляемых Компанией.',
+        terms2Title:'Статья 2 (Определения)',
+        terms2Para:'1. «Услуги» означает веб-сайт и дополнительные сервисы, предоставляемые Компанией.\n2. «Пользователь» означает любое лицо, использующее Услуги в соответствии с настоящими Условиями.',
+        terms3Title:'Статья 3 (Использование сервиса)',
+        terms3Para:'Пользователи могут бесплатно использовать функции калькулятора, предоставляемые Компанией.\nКомпания может временно приостановить доступность сервиса для технического обслуживания или обновлений.',
+        terms4Title:'Статья 4 (Обязанности пользователя)',
+        terms4Para:'Пользователь не должен совершать следующие действия при использовании сервиса:\n1. Нарушать информацию или права третьих лиц либо порочить их репутацию;\n2. Создавать препятствия в работе сервиса;\n3. Использовать сервис для незаконных или неуместных целей.',
+        terms5Title:'Статья 5 (Отказ от ответственности)',
+        terms5Para:'Компания не несет ответственности за приостановку работы сервиса или ошибки по причинам, не зависящим от нее, таким как форс-мажор или сбои сервера.\nКомпания также не отвечает за контент внешних связанных сайтов.',
+        terms6Title:'Статья 6 (Применимое право и юрисдикция)',
+        terms6Para:'Настоящие Условия регулируются законодательством Республики Корея, и все споры, возникающие в связи с сервисом, подлежат исключительной юрисдикции Центрального районного суда Сеула.',
+        terms:'Условия использования', privacy:'Политика   конфиденциальности',
+        copyright:'© 2025 RacleWeb. Все права защищены.'
       },
       es: {
-        /* …“Términos de servicio” 번역… */
+        nav1:'Interés compuesto', nav2:'Objetivo de inversión', nav3:'Calculadora de ROI', nav4:'Calculadora ratio riesgo-beneficio',
+        termsTitle:'Términos de servicio',
+        termsPara1:'Estos Términos regulan su uso del sitio web de RacleWeb y los servicios relacionados (los «Servicios») proporcionados por RacleWeb («la Empresa»).',
+        terms1Title:'Artículo 1 (Objeto)',
+        terms1Para:'Estos Términos se aplican a todo uso de los Servicios proporcionados por la Empresa.',
+        terms2Title:'Artículo 2 (Definiciones)',
+        terms2Para:'1. «Servicios» significa el sitio web y los servicios adicionales proporcionados por la Empresa.\n2. «Usuario» significa cualquier persona que utilice los Servicios de acuerdo con estos Términos.',
+        terms3Title:'Artículo 3 (Uso del Servicio)',
+        terms3Para:'Los usuarios pueden utilizar de forma gratuita los servicios de calculadora proporcionados por la Empresa.\nLa Empresa puede suspender temporalmente la disponibilidad del servicio para mantenimiento del sistema o actualizaciones.',
+        terms4Title:'Artículo 4 (Obligaciones del Usuario)',
+        terms4Para:'El usuario no deberá realizar lo siguiente al utilizar el Servicio:\n1. Infringir la información o los derechos de terceros, o difamarles;\n2. Interferir con el funcionamiento del Servicio;\n3. Utilizar el Servicio con fines ilegales o inapropiados.',
+        terms5Title:'Artículo 5 (Descargo de responsabilidad)',
+        terms5Para:'La Empresa no será responsable de ninguna suspensión del servicio o errores debidos a causas fuera de su control, como fuerza mayor o fallos del servidor.\nLa Empresa tampoco se responsabiliza del contenido de sitios externos vinculados.',
+        terms6Title:'Artículo 6 (Ley aplicable y jurisdicción)',
+        terms6Para:'Estos Términos se regirán por las leyes de la República de Corea y las disputas vinculadas al Servicio estarán sujetas a la jurisdicción exclusiva del Tribunal de Distrito Central de Seúl.',
+        terms:'Términos de servicio', privacy:'Política de privacidad',
+        copyright:'© 2025 RacleWeb. Todos los derechos reservados.'
       },
       zh: {
-        /* …“服务条款” 번역… */
+        nav1:'复利', nav2:'投资目标', nav3:'ROI 计算器', nav4:'风险收益比计算器',
+        termsTitle:'服务条款',
+        termsPara1:'本服务条款规范您对RacleWeb网站及相关服务（“服务”）的使用，该等服务由RacleWeb（“本公司”）提供。',
+        terms1Title:'第1条（目的）',
+        terms1Para:'本条款适用于本公司提供的所有服务的使用。',
+        terms2Title:'第2条（定义）',
+        terms2Para:'1. “服务”是指本公司提供的网站及附加服务。\n2. “用户”是指依据本条款使用本公司服务的任何个人。',
+        terms3Title:'第3条（服务使用）',
+        terms3Para:'用户可以免费使用本公司提供的计算器服务。\n本公司可为系统维护或更新暂时中断服务。',
+        terms4Title:'第4条（用户义务）',
+        terms4Para:'用户在使用服务时不得进行以下行为：\n1. 侵害他人信息或权利，或诽谤他人；\n2. 干扰服务运营；\n3. 以非法或不当目的使用服务。',
+        terms5Title:'第5条（免责声明）',
+        terms5Para:'公司不对因不可抗力或服务器故障等超出其控制范围的原因导致的服务中断或错误承担任何责任。\n公司也不对外部链接网站的内容负责。',
+        terms6Title:'第6条（适用法律及管辖）',
+        terms6Para:'本条款适用大韩民国法律，与服务相关的争议应提交首尔中央地方法院专属管辖。',
+        terms:'服务条款', privacy:'隐私政策',
+        copyright:'© 2025 RacleWeb。保留所有权利。'
       },
       ja: {
-        /* …“利用規約” 번역… */
+        nav1:'複利', nav2:'投資目標', nav3:'ROI 計算機', nav4:'損益比率計算機',
+        termsTitle:'利用規約',
+        termsPara1:'本利用規約は、RacleWeb（以下「当社」）が提供するウェブサイトおよび関連サービス（以下「サービス」）の利用条件を定めるものです。',
+        terms1Title:'第1条（目的）',
+        terms1Para:'本規約は、当社が提供するすべてのサービスの利用に適用されます。',
+        terms2Title:'第2条（定義）',
+        terms2Para:'1. 「サービス」とは、当社が提供するウェブサイトおよび付随するサービスを意味します。\n2. 「利用者」とは、本規約に従いサービスを利用する会員および非会員を意味します。',
+        terms3Title:'第3条（サービスの利用）',
+        terms3Para:'利用者は当社が提供する計算サービスを無料で利用できます。\n当社はシステムメンテナンスや更新のために一時的にサービスを停止することがあります。',
+        terms4Title:'第4条（利用者の義務）',
+        terms4Para:'利用者はサービス利用時に以下の行為をしてはなりません：\n1. 他人の情報または権利を侵害する行為や名誉を毀損する行為；\n2. サービスの運営を妨害する行為；\n3. 違法または不適切な目的でサービスを利用する行為。',
+        terms5Title:'第5条（免責事項）',
+        terms5Para:'当社は、天災地変やサーバー障害など当社の責めに帰さない事由によるサービスの中断やエラーについて、一切責任を負いません。\nまた、外部リンク先サイトのコンテンツについても責任を負いません。',
+        terms6Title:'第6条（準拠法および裁判管轄）',
+        terms6Para:'本規約の解釈および適用には大韓民国の法律が適用され、サービス利用に関する紛争はソウル中央地方裁判所を第一審の専属的管轄裁判所とします。',
+        terms:'利用規約', privacy:'プライバシーポリシー',
+        copyright:'© 2025 RacleWeb. 無断転載を禁じます。'
       }
     };
 
-    const languageNames = { ko:'한국어',en:'English',fr:'Français',de:'Deutsch',ru:'Русский',es:'Español',zh:'中文',ja:'日本語' };
+    const languageNames = { ko:'한국어', en:'English', fr:'Français', de:'Deutsch', ru:'Русский', es:'Español', zh:'中文', ja:'日本語' };
     const sel = document.getElementById('lang-select');
-    Object.entries(languageNames).forEach(([c,n])=>{let o=document.createElement('option');o.value=c;o.textContent=n;sel.append(o);});
-    function updateLanguage(lang){
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const k=el.getAttribute('data-i18n');
-        if(translations[lang] && translations[lang][k]) el.textContent = translations[lang][k];
+    Object.entries(languageNames).forEach(([code,name]) => {
+      const o = document.createElement('option'); o.value = code; o.textContent = name; sel.append(o);
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key].replace(/\n/g, '<br>');
+        }
       });
     }
-    const userLang = navigator.language.slice(0,2), def = translations[userLang]?userLang:'ko';
-    sel.value = def; updateLanguage(def);
-    sel.addEventListener('change',e=>updateLanguage(e.target.value));
+
+    const userLang = navigator.language.slice(0,2);
+    const defaultLang = translations[userLang] ? userLang : 'ko';
+    sel.value = defaultLang;
+    updateLanguage(defaultLang);
+    sel.addEventListener('change', e => updateLanguage(e.target.value));
   </script>
 </body>
 </html>
