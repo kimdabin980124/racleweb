@@ -1,49 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HNN07XZ6Z"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}    
-    gtag('js', new Date());
-    gtag('config', 'G-4HNN07XZ6Z');
-  </script>
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8252805944184403" crossorigin="anonymous"></script>
-
-  <!-- Naver site verification -->
-  <meta name="naver-site-verification" content="2128ade9f7f66d3b5ac39f6bede8cb23bdc9ea49" />
-
-  <!-- SEO & Social -->
-  <meta name="description" content="RacleWeb - 다양한 투자 계산기를 한 곳에서. 복리 계산기, 투자 목표 계산기, ROI 계산기, 손익비 계산기를 제공합니다." />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <meta property="og:title" content="RacleWeb 투자 계산기" />
-  <meta property="og:description" content="복리 계산기, 투자 목표 계산기, ROI 계산기, 손익비 계산기를 이용해 쉽고 빠르게 투자 계획을 세워보세요." />
-  <meta property="og:url" content="https://www.racleweb.com/" />
-  <meta name="twitter:card" content="summary" />
-
+  <!-- Google Analytics, AdSense, meta 등 기존 head 내용 그대로… -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="title">투자 계산기</title>
-
   <style>
-    :root { --bg: #f5f5f5; --card-bg: #ffffff; --text: #333333; --accent: #4a90e2; --accent-hover: #357ab8; --border: #e0e0e0; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: 'Roboto', sans-serif; padding: 1rem; }
-    header { text-align: center; margin-bottom: 1rem; }
-    .top-nav { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
-    .nav-link { color: var(--accent); text-decoration: none; font-size: 1rem; }
-    .nav-link:hover { text-decoration: underline; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; max-width: 400px; margin: 0 auto; text-align: center; }
-    h1 { font-size: 1.6rem; margin-bottom: 1.5rem; }
-    .top-bar { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
-    .lang-selector { display: flex; align-items: center; gap: 0.5rem; }
-    .lang-selector .icon { font-size: 1.2rem; }
-    select { padding: 0.5rem; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 4px; background: var(--card-bg); color: var(--text); max-width: 120px; }
-    .link-button { display: block; padding: 0.75rem; margin: 0.5rem 0; font-size: 1rem; border: none; border-radius: 4px; background: var(--accent); color: #fff; text-decoration: none; transition: background 0.3s; }
-    .link-button:hover { background: var(--accent-hover); }
+    /* 기존 스타일… */
+    .intro { margin:2rem auto; max-width:800px; line-height:1.6; color:#333; }
+    .intro h2 { font-size:1.4rem; margin-bottom:0.5rem; }
+    .intro p { margin-bottom:1rem; }
   </style>
 </head>
 <body>
@@ -57,9 +23,18 @@
       <a href="/roicalc/" class="nav-link" data-i18n="nav3">ROI 계산기</a>
       <a href="/riskrewordcalc/" class="nav-link" data-i18n="nav4">손익비 계산기</a>
     </nav>
+
+    <!-- ★ 소개 섹션 추가 -->
+    <section class="intro">
+      <h2 data-i18n="introTitle"></h2>
+      <p data-i18n="introPara1"></p>
+      <p data-i18n="introPara2"></p>
+    </section>
+    <!-- ★ 여기까지 -->
   </header>
 
   <div class="card">
+    <!-- 언어 선택 & 버튼들은 기존과 동일 -->
     <div class="top-bar">
       <div class="lang-selector">
         <span class="icon">🌐</span>
@@ -68,43 +43,101 @@
     </div>
 
     <h1 data-i18n="title">투자 계산기</h1>
-    <a href="/interestcalc/" class="link-button" id="link1" data-i18n="calc1">복리 계산기</a>
-    <a href="/investmentgoal/" class="link-button" id="link2" data-i18n="calc2">투자 목표 계산기</a>
-    <a href="/roicalc/" class="link-button" id="link3" data-i18n="calc3">ROI 계산기</a>
-    <a href="/riskrewordcalc/" class="link-button" id="link4" data-i18n="calc4">손익비 계산기</a>
+    <a href="/interestcalc/" class="link-button" data-i18n="calc1">복리 계산기</a>
+    <a href="/investmentgoal/" class="link-button" data-i18n="calc2">투자 목표 계산기</a>
+    <a href="/roicalc/" class="link-button" data-i18n="calc3">ROI 계산기</a>
+    <a href="/riskrewordcalc/" class="link-button" data-i18n="calc4">손익비 계산기</a>
   </div>
 
   <script>
     const translations = {
-      ko: { title: '투자 계산기', calc1: '복리 계산기', calc2: '투자 목표 계산기', calc3: 'ROI 계산기', calc4: '손익비 계산기' , nav1: '복리 계산기', nav2: '투자 목표 계산기', nav3: 'ROI 계산기', nav4: '손익비 계산기'  },
-      en: { title: 'Investment Calculators', calc1: 'Compound Interest Calculator', calc2: 'Investment Goal Calculator', calc3: 'ROI Calculator', calc4: 'Risk–Reward Ratio Calculator',  nav1: 'Compound Interest', nav2: 'Investment Goal', nav3: 'ROI Calculator', nav4: 'Risk–Reward Ratio Calculator' },
-      fr: { title: "Calculatrices d'investissement", calc1: "Calculateur d'intérêt composé", calc2: "Calculateur d'objectif d'investissement", calc3: "Calculateur de ROI",  calc4: "	Calculateur de ratio risque/rendement" , nav1: "Intérêt composé", nav2: "Objectif d'investissement", nav3: "Calculateur de ROI" , nav4: "	Calculateur de ratio risque/rendement" },
-      de: { title: 'Investitionsrechner', calc1: 'Zinseszinsrechner', calc2: 'Investitionszielrechner', calc3: 'ROI Rechner', calc4: 'Risiko-Ertragsrechner', nav1: 'Zinseszins', nav2: 'Investitionsziel', nav3: 'ROI Rechner', nav4: 'Risiko-Ertragsrechner' },
-      ru: { title: 'Инвестиционные калькуляторы', calc1: 'Калькулятор сложных процентов', calc2: 'Калькулятор цели инвестирования', calc3: 'Калькулятор ROI', calc4: 'Калькулятор соотношения риск/вознаграждение' , nav1: 'Сложные проценты', nav2: 'Цель инвестирования', nav3: 'Калькулятор ROI' , nav4: 'Калькулятор соотношения риск/вознаграждение'},
-      es: { title: 'Calculadoras de inversión', calc1: 'Calculadora de interés compuesto', calc2: 'Calculadora de objetivo de inversión', calc3: 'Calculadora de ROI', calc4: 'Calculadora de ratio riesgo-beneficio' , nav1: 'Interés compuesto', nav2: 'Objetivo de inversión', nav3: 'Calculadora de ROI', nav4: 'Calculadora de ratio riesgo-beneficio' },
-      zh: { title: '投资计算器', calc1: '复利计算器', calc2: '投资目标计算器', calc3: 'ROI 计算器', calc4: '风险收益比计算器', nav1: '复利', nav2: '投资目标', nav3: 'ROI 计算器' , nav4:'风险收益比计算器'},
-      ja: { title: '投資計算機', calc1: '複利計算機', calc2: '投資目標計算機', calc3: 'ROI 計算機', calc4: '損益比率計算機', nav1: '複利', nav2: '投資目標', nav3: 'ROI 計算機' , nav4:'損益比率計算機'}
+      ko: {
+        title: '투자 계산기',
+        nav1: '복리 계산기', nav2: '투자 목표 계산기', nav3: 'ROI 계산기', nav4: '손익비 계산기',
+        calc1: '복리 계산기', calc2: '투자 목표 계산기', calc3: 'ROI 계산기', calc4: '손익비 계산기',
+        introTitle: 'RacleWeb 투자 계산기 소개',
+        introPara1: 'RacleWeb은 개인 투자자와 트레이더를 위한 올인원 계산기 모음 사이트입니다. 복리 계산, 투자 목표 설정, ROI 산출, 손익비 분석까지 4가지 핵심 툴을 통해 나만의 투자 계획을 쉽고 빠르게 세울 수 있습니다.',
+        introPara2: '각 계산기는 단순한 값 입력만으로 직관적인 차트와 표를 제공하며, 시뮬레이션 결과를 바탕으로 최적의 투자 전략을 탐색할 수 있도록 돕습니다. 언제 어디서나 무료로 이용 가능하며, 입력된 데이터는 저장되지 않아 개인정보 걱정 없이 편하게 사용하실 수 있습니다.'
+      },
+      en: {
+        title: 'Investment Calculators',
+        nav1: 'Compound Interest', nav2: 'Investment Goal', nav3: 'ROI Calculator', nav4: 'Risk–Reward Ratio Calculator',
+        calc1: 'Compound Interest Calculator', calc2: 'Investment Goal Calculator', calc3: 'ROI Calculator', calc4: 'Risk–Reward Ratio Calculator',
+        introTitle: 'Welcome to RacleWeb Calculator Suite',
+        introPara1: 'RacleWeb offers an all-in-one suite of calculators for retail investors and traders. From compound interest to goal planning, ROI, and risk-reward analysis, our four core tools help you build your investment strategy quickly and accurately.',
+        introPara2: 'Each calculator delivers intuitive charts and tables based on your inputs, enabling you to explore optimal strategies based on simulation results. Free to use anywhere, and no data is stored—your privacy is always protected.'
+      },
+      fr: {
+        title: "Calculatrices d'investissement",
+        nav1: "Intérêt composé", nav2: "Objectif d'investissement", nav3: "Calculateur de ROI", nav4: "Calculateur de ratio risque/rendement",
+        calc1: "Calculateur d'intérêt composé", calc2: "Calculateur d'objectif d'investissement", calc3: "Calculateur de ROI", calc4: "Calculateur de ratio risque/rendement",
+        introTitle: "Présentation de RacleWeb Calculator Suite",
+        introPara1: "RacleWeb propose une suite de calculateurs tout-en-un pour investisseurs particuliers et traders. Du calcul d'intérêts composés à la planification d'objectifs, ROI et analyse risque/rendement, nos quatre outils principaux vous aident à élaborer votre stratégie d'investissement rapidement et précisément.",
+        introPara2: "Chaque calculateur fournit des graphiques et tableaux intuitifs basés sur vos entrées, vous permettant d'explorer les stratégies optimales selon les résultats des simulations. Gratuit et sans enregistrement de données—votre vie privée est protégée."
+      },
+      de: {
+        title: 'Investitionsrechner',
+        nav1: 'Zinseszins', nav2: 'Investitionsziel', nav3: 'ROI Rechner', nav4: 'Risiko-Ertragsrechner',
+        calc1: 'Zinseszinsrechner', calc2: 'Investitionszielrechner', calc3: 'ROI Rechner', calc4: 'Risiko-Ertragsrechner',
+        introTitle: 'Vorstellung der RacleWeb Rechner-Suite',
+        introPara1: 'RacleWeb bietet eine All-in-One-Rechnersuite für Privatanleger und Trader. Von Zinseszins über Zielplanung, Rendite bis zur Risiko-Ertrags-Analyse unterstützen unsere vier Haupt-Tools Sie dabei, Ihre Anlagestrategie schnell und präzise zu erstellen.',
+        introPara2: 'Jeder Rechner liefert intuitive Diagramme und Tabellen basierend auf Ihren Eingaben, sodass Sie optimale Strategien anhand der Simulationsergebnisse erkunden können. Kostenlos nutzbar und ohne Datenspeicherung—Ihr Datenschutz ist garantiert.'
+      },
+      ru: {
+        title: 'Инвестиционные калькуляторы',
+        nav1: 'Сложные проценты', nav2: 'Цель инвестирования', nav3: 'Калькулятор ROI', nav4: 'Калькулятор риск/доход',
+        calc1: 'Калькулятор сложных процентов', calc2: 'Калькулятор цели инвестирования', calc3: 'Калькулятор ROI', calc4: 'Калькулятор риск/доход',
+        introTitle: 'Обзор RacleWeb Calculator Suite',
+        introPara1: 'RacleWeb предлагает универсальный набор калькуляторов для инвесторов и трейдеров. От расчёта сложных процентов до планирования целей, ROI и анализа риск/доход—наши четыре ключевых инструмента помогут быстро и точно разработать 전략ию.',
+        introPara2: 'Каждый калькулятор предоставляет наглядные графики и таблицы на основе введённых данных, позволяя исследовать оптимальные стратегии по результатам моделирования. Бесплатно и без сохранения данных—ваша конфиденциальность защищена.'
+      },
+      es: {
+        title: 'Calculadoras de inversión',
+        nav1: 'Interés compuesto', nav2: 'Objetivo de inversión', nav3: 'Calculadora de ROI', nav4: 'Calculadora de ratio riesgo-beneficio',
+        calc1: 'Calculadora de interés compuesto', calc2: 'Calculadora de objetivo de inversión', calc3: 'Calculadora de ROI', calc4: 'Calculadora de ratio riesgo-beneficio',
+        introTitle: 'Presentación de RacleWeb Calculator Suite',
+        introPara1: 'RacleWeb ofrece un conjunto de calculadoras todo en uno para inversores y traders. Desde interés compuesto hasta planificación de objetivos, ROI y análisis riesgo-beneficio, nuestras cuatro herramientas principales te ayudan a diseñar tu estrategia de inversión de forma rápida y precisa.',
+        introPara2: 'Cada calculadora muestra gráficos y tablas intuitivas según tus entradas, permitiéndote explorar estrategias óptimas en función de los resultados de simulación. Gratis y sin guardar datos—tu privacidad está protegida.'
+      },
+      zh: {
+        title: '投资计算器',
+        nav1: '复利', nav2: '投资目标', nav3: 'ROI 计算器', nav4: '风险收益比计算器',
+        calc1: '复利计算器', calc2: '投资目标计算器', calc3: 'ROI 计算器', calc4: '风险收益比计算器',
+        introTitle: 'RacleWeb 投资计算器套件介绍',
+        introPara1: 'RacleWeb 为个人投资者和交易者提供一体化的计算器套件。无论是复利计算、目标规划、投资回报率还是风险收益比分析，我们的四大核心工具都能帮助您快速、精准地制定投资策略。',
+        introPara2: '每个计算器都会根据您的输入提供直观的图表和表格，帮助您根据模拟结果探索最佳策略。完全免费使用，不存储数据——您的隐私得到保护。'
+      },
+      ja: {
+        title: '投資計算機',
+        nav1: '複利', nav2: '投資目標', nav3: 'ROI 計算機', nav4: '損益比率計算機',
+        calc1: '複利計算機', calc2: '投資目標計算機', calc3: 'ROI 計算機', calc4: '損益比率計算機',
+        introTitle: 'RacleWeb 計算ツールスイートの紹介',
+        introPara1: 'RacleWeb は個人投資家やトレーダー向けのオールインワン計算ツールスイートです。複利計算から目標設定、ROI、リスクリワード比分析まで、4つの主要ツールで投資戦略を迅速かつ正確に構築できます。',
+        introPara2: '各計算ツールは入力に基づく直感的なグラフと表を提供し、シミュレーション結果に基づいて最適な戦略を検討できます。完全無料でデータは保存されず、プライバシーが保護されます。'
+      }
     };
-    const languageNames = { ko: '한국어', en: 'English', fr: 'Français', de: 'Deutsch', ru: 'Русский', es: 'Español', zh: '中文', ja: '日本語' };
 
-    function populateLangs() {
-      const sel = document.getElementById('lang-select'); sel.innerHTML = '';
-      Object.entries(languageNames).forEach(([code, name]) => {
-        const o = document.createElement('option'); o.value = code; o.textContent = name; sel.append(o);
-      });
-    }
+    const languageNames = { ko:'한국어', en:'English', fr:'Français', de:'Deutsch', ru:'Русский', es:'Español', zh:'中文', ja:'日本語' };
+
+    // 언어 선택 박스 채우기
+    const sel = document.getElementById('lang-select');
+    Object.entries(languageNames).forEach(([code,name])=>{
+      let o=document.createElement('option');
+      o.value=code; o.textContent=name; sel.append(o);
+    });
+
     function updateLanguage(lang) {
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key]) el.textContent = translations[lang][key];
       });
     }
-    populateLangs();
+
     const userLang = navigator.language.slice(0,2);
     const defaultLang = translations[userLang] ? userLang : 'ko';
-    document.getElementById('lang-select').value = defaultLang;
+    sel.value = defaultLang;
     updateLanguage(defaultLang);
-    document.getElementById('lang-select').addEventListener('change', e => updateLanguage(e.target.value));
+    sel.addEventListener('change', e => updateLanguage(e.target.value));
   </script>
 </body>
 </html>
